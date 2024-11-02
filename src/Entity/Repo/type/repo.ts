@@ -7,4 +7,5 @@ export interface Repository {
             committedDate: string
         }
     }
+    id: string
 }

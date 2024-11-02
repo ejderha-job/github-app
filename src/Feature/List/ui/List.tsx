@@ -11,11 +11,9 @@ interface ListProps {
 export const List = memo(({ search, repos }: ListProps) => {
 
 return <div className={style.table}>
-        {repos.map((repo) => <Repo 
-        defaultBranchRef={repo.defaultBranchRef}
-        name={repo.name}
-        stargazerCount={repo.stargazerCount}
-        url={repo.url}
+            {repos.map((repo) => <Repo 
+            key={repo.id}
+            {...repo}
         />)}
     </div>
 })

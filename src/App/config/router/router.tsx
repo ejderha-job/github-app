@@ -1,13 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import { ListPage } from "../../../Pages/RepoList/ui/RepoList";
+import { ListPage } from "../../../Pages/ListPage/ui/RepoList";
+import { ItemPage } from "../../../Pages/ItemPage/ui/ItemPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <ListPage></ListPage>,
+    element: <ListPage/>,
   },
   {
-    path: "/:id",
-    element: <div>selected repo</div>,
+    path: "/repo/:id",
+    element: <ItemPage />,
   },
 ]);

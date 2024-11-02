@@ -9,6 +9,7 @@ const query = `query {
           name
           stargazerCount
           url
+          id
           defaultBranchRef{
             target{
               ... on Commit {
