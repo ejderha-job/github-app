@@ -1,0 +1,20 @@
+.btn_active {
+    background-color: darkorange;
+}
+
+.btn {
+    background-color: rgb(161, 137, 107);
+}
+
+.search {
+    padding: 5px;
+    border: 1px solid rgb(161, 137, 107);
+    border-radius: 4px;
+    width: 400px;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
