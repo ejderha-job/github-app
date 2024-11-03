@@ -1,0 +1,41 @@
+.home {
+    height: 50%;
+}
+
+.header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: var(--secondary);
+    display: flex;
+    gap: 10px;
+    height: 100px;
+}
+
+.header__avatar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.body {
+    padding: 10px;
+    display: flex;
+    gap: 30px;
+}
+
+.author {
+
+}
+
+.repository {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

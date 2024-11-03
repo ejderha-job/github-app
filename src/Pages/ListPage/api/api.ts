@@ -1,17 +1,17 @@
-import axios from "axios"
 import { createEffect } from "effector"
+import { graphQLRequest } from "../../../Shared/api/api"
 
-const query = `query {
+const getRepositories = `query {
 	search(query:"is:public", type:REPOSITORY, first:10){
-    edges{
-      node{
+    edges {
+      node {
         ... on Repository {
           name
           stargazerCount
           url
           id
-          defaultBranchRef{
-            target{
+          defaultBranchRef {
+            target {
               ... on Commit {
                 committedDate
               }
@@ -23,6 +23,4 @@ const query = `query {
   }
 }`
 
-export const getRepoListFX = createEffect(async () => axios.post(import.meta.env.VITE_API, { query }, 
-  { headers: { "Authorization": `Bearer ${import.meta.env.VITE_TOKEN}`}}
-))
+export const getRepoListFX = createEffect(async () => graphQLRequest(getRepositories))

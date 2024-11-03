@@ -1,7 +1,14 @@
 .btn_active {
-    background-color: darkorange;
+    background-color: var(--primary);
 }
 
 .btn {
-    background-color: rgb(161, 137, 107);
+    border-radius: 6px;
+    border: transparent;
+    padding: 10px 15px;
+}
+
+.pagination {
+    display: flex;
+    gap: 4px;
 }

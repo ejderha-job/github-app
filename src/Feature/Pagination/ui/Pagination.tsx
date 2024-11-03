@@ -1,13 +1,21 @@
 import { memo, useState } from "react"
 import style from "./Pagination.module.css"
+import cls from "classnames"
+
+const pagesCount = 10
 
 export const Pagination = memo(() => {
-  const pages = Array(10).fill(0)
+  const pages = Array(pagesCount).fill(0)
   const [page, setPage] = useState(1)
   const handlerPagination = (page:number) => () => {
     setPage(page)
   }
-  return <div>
-    {pages.map((_, index) => <button key={index} className={style.btn_active} style={{backgroundColor: page === index + 1 ? 'black' : undefined}} onClick={handlerPagination(index + 1)}>{index}</button>)}
+  
+  return <div className={style.pagination}>
+    {pages.map((_, index) => 
+      <button 
+      key={index} 
+      className={cls([style.btn, page === index + 1 && style.btn_active])} 
+      onClick={handlerPagination(index + 1)}>{index + 1}</button>)}
   </div>
 })

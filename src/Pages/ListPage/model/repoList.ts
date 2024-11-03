@@ -4,11 +4,15 @@ import { getRepoListFX } from "../api/api";
 
 export const repoListComponent = createGate("repoListComponent")
 
+export const $repoList = createStore([])
+
 sample({
     clock: repoListComponent.open,
+    filter(src) {
+        return !src.length
+    },
+    source: $repoList,
     target: getRepoListFX
 })
 
-export const repoList = createStore([])
-
-repoList.on(getRepoListFX.doneData, (_, data) => data.data.data.search.edges.map(el => el.node) )
+$repoList.on(getRepoListFX.doneData, (_, data) => data.search.edges.map(el => el.node) )
