@@ -7,6 +7,9 @@ export const ItemPageGate = createGate("ItemPageGate")
 
 sample({
     clock: ItemPageGate.open,
+    fn: (params) => {
+        return `owner: "${params.author}", name: "${params.title}"`   
+    },
     target: getRepoByNameFX
 })
 

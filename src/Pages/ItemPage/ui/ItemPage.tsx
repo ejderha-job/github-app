@@ -9,7 +9,7 @@ export const ItemPage = memo(() => {
     const handlerClick = () => {
         nav(-1)
     }
-    console.log({repository});
+
     if (!repository) {
         return null
     }

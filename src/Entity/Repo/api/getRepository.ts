@@ -1,8 +1,8 @@
 import { createEffect } from "effector"
 import { graphQLRequest } from "../../../Shared/api/api"
 
-const getRpositoryByName = `query getRepositoryInfo{
-  repository(owner:"sindresorhus", name:"awesome"){
+const getRpositoryByName = (query:string) => `query getRepositoryInfo{
+  repository(${query}){
     owner {
       avatarUrl
       nickname:login
@@ -25,4 +25,4 @@ const getRpositoryByName = `query getRepositoryInfo{
   }
 }`
 
-export const getRepoByNameFX = createEffect(async () => graphQLRequest(getRpositoryByName))
+export const getRepoByNameFX = createEffect(async (query:string) => graphQLRequest(getRpositoryByName(query)))

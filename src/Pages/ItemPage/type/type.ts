@@ -8,3 +8,4 @@ export interface Repository {
     nickname: string
     profileLink: string
 }
+

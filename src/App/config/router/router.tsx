@@ -8,7 +8,7 @@ export const router = createBrowserRouter([
     element: <ListPage/>,
   },
   {
-    path: "/repo/:id",
+    path: "/repo/:author/:title",
     element: <ItemPage />,
   },
 ]);
