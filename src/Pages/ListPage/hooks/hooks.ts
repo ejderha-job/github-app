@@ -1,6 +1,6 @@
 import { useGate, useUnit } from "effector-react"
 import { $repoList, repoListComponent } from "../model/repoList"
-import { getRepoListFX } from "../api/api"
+import { getRepoListFX } from "../../../Entity/Repo/api/getRepositoriesList"
 
 export const useRepo = () => {
     useGate(repoListComponent)

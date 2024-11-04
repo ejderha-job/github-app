@@ -1,16 +1,16 @@
 import { createStore, sample } from "effector";
 import { createGate } from "effector-react";
-import { getRepoListFX } from "../api/api";
+import { getRepoListFX } from "../../../Entity/Repo/api/getRepositoriesList";
+import { Repository } from "../../../Entity/Repo/type/repo";
 
 export const repoListComponent = createGate("repoListComponent")
 
-export const $repoList = createStore([])
+export const $repoList = createStore<Repository[]>([])
 
 sample({
     clock: repoListComponent.open,
-    filter(src) {
-        return !src.length
-    },
+    fn: () => "first: 10",
+    filter: (src) => !src.length,
     source: $repoList,
     target: getRepoListFX
 })

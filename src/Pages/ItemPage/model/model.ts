@@ -1,6 +1,6 @@
 import { createStore, sample } from "effector";
 import { createGate } from "effector-react";
-import { getRepoByNameFX } from "../api/api";
+import { getRepoByNameFX } from "../../../Entity/Repo/api/getRepository";
 import { Repository } from "../type/type";
 
 export const ItemPageGate = createGate("ItemPageGate")

@@ -1,9 +1,15 @@
 import { createEffect } from "effector"
 import { graphQLRequest } from "../../../Shared/api/api"
 
-const getRepositories = `query {
-	search(query:"is:public", type:REPOSITORY, first:10){
-    edges {
+const getRepositories = (pagination:string) => `query {
+	search(query:"is:public", type:REPOSITORY ${pagination}) {
+  pageInfo{
+      endCursor
+      hasPreviousPage
+      hasNextPage
+      startCursor
+    }  
+  edges {
       node {
         ... on Repository {
           name
@@ -23,4 +29,4 @@ const getRepositories = `query {
   }
 }`
 
-export const getRepoListFX = createEffect(async () => graphQLRequest(getRepositories))
+export const getRepoListFX = createEffect(async (pagination: string) => graphQLRequest(getRepositories(pagination)))
